@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class ShortDateToFullDateConverter {
+public class DateConverterInJava {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
