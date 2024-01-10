@@ -1,41 +1,52 @@
+import java.util.Scanner;
+
 public class Rectangle {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-    private int length;
-    private int width;
+        System.out.println("Enter the width and length of the rectangle: ");
+        double width = scanner.nextDouble();
+        double length = scanner.nextDouble();
 
-    public Rectangle() {
+        Rectangle rectangle = new Rectangle(width, length);
+        Square square = new Square(width);
 
-        length = 1;
-        width = 1;
+        System.out.println("Rectangle Area: " + rectangle.getArea());
+        System.out.println("Rectangle Perimeter: " + rectangle.getPerimeter());
+
+        System.out.println("Square Area: " + square.getArea());
+        System.out.println("Square Perimeter: " + square.getPerimeter());
     }
 
-    public Rectangle(int l, int w) {
+    private double width;
+    private double length;
 
-        length = l;
-        width = w;
+    public Rectangle(double width, double length) {
+        this.width = width;
+        this.length = length;
     }
 
-    public int getWidth() {
-
-        return width;
-
+    public double getArea() {
+        return width * length;
     }
 
-    public int getLength() {
+    public double getPerimeter() {
+        return 2 * (width + length);
+    }
+}
 
-        return length;
+class Square {
+    private double side;
+
+    public Square(double side) {
+        this.side = side;
     }
 
-    public int calculateArea() {
-
-        int area = length * width;
-        return area;
+    public double getArea() {
+        return side * side;
     }
 
-    public int calculatePerimeter() {
-
-        int perimeter = (2 * length) + (2 * width);
-        return perimeter;
-
+    public double getPerimeter() {
+        return 4 * side;
     }
 }
